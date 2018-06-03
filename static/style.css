@@ -140,6 +140,7 @@ input::-moz-focus-inner, button::-moz-focus-inner {
 
 .bg {
   z-index: 1;
+  height: 750px;
 }
 
 .bg img {
