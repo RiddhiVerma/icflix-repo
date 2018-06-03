@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>icflix - Landing Page</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+    <main>
+			<article class="wrapper">
+				<section class="bg">
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/165418/tvOff.jpg">
+				</section>
+				<section class="fg">
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/165418/tvOn.jpg">
+				</section>
+				<section class="block">
+					<section class="tv"></section>
+				</section>
+				<section class="signin">
+					<div class="limiter">
+						<div class="container-login">
+							<div class="wrap-login">
+								<form class="login-form validate-form">
+									<span class="login-form-title p-b-48">
+										<img src="./static/marketinglogo.svg">
+									</span>
+
+									<div class="wrap-input validate-input" data-validate = "Valid email is: a@b.c">
+										<input class="input" type="text" name="email">
+										<span class="focus-input" data-placeholder="Email"></span>
+									</div>
+
+									<div class="wrap-input validate-input" data-validate="Enter password">
+										<span class="btn-show-pass">
+											<i class="zmdi zmdi-eye"></i>
+										</span>
+										<input class="input" type="password" name="pass">
+										<span class="focus-input" data-placeholder="Password"></span>
+									</div>
+
+									<div class="container-login-form-btn">
+										<div class="wrap-login-form-btn">
+											<div class="login-form-bgbtn"></div>
+											<button class="login-form-btn">
+												<a href="index.html">Login</a>
+											</button>
+										</div>
+									</div>
+
+									<div class="text-center p-t-115">
+										<span class="txt1">
+											Don’t have an account?
+										</span>
+
+										<a class="txt2" href="#">
+											Sign Up
+										</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</article>
+			<!-- <article class="landing">
+        <script id="landing-template" type="text/x-handlebars-template">
+          <h1>Recommended for you</h1>
+          {{#each data_resp}}
+            <section class="movie">
+              <div class="cover" style="background-image: url({{poster_portrait_url}}/500x300)"></div>
+            </section>
+          {{/each}}
+        </script>
+      </article> -->
+		</main>
+		<footer id="footer">
+      <div class="mui-container-fluid">
+        <ul class="footer_list">
+          <li><img src="./static/devices.svg"><p>Watch on 5 devices at a time</p></li>
+          <li><img src="./static/movies.svg"><p>Unlimited HD, movies &amp; TV shows</p></li>
+          <li><img src="./static/multilanguage.svg"><p>Arabic, French, English audio &amp; subtitles</p></li>
+          <li><img src="./static/cancel.svg"><p>You can cancel anytime</p></li>
+        </ul>
+        <br>
+        <p>Made with ♥ by Riddhi Verma</p>
+      </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="static/script.js"></script>
+	</body>
+</html>
+ 

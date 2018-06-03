@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>icflix - Home Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+    
+  </head>
+  <body>
+    <header id="header">
+      <div class="mui-appbar mui--appbar-line-height">
+        <ul class="headerlist">
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Sign Out</a></li>
+        </ul>
+        </div>
+      </div>
+    </header>
+    <aside id="sidedrawer" class="mui--no-user-select mui-appbar mui--appbar-line-height">
+      <div id="sidedrawer-brand" class="mui--appbar-line-height">
+        <img src="./static/marketinglogo.svg">
+      </div>
+      <div class="mui-divider"></div>
+      <ul class="infosection">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV show</a></li>
+        <li><a href="#">Kids</a></li>
+      </ul>
+    </aside>
+     <div id="content-wrapper">
+      <div class="mui-container-fluid">
+        <main>
+          <div class="row">
+            <div class="mui-dropdown mui--pull-right dropdownfilter">
+              <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+                Sort by
+                <span class="mui-caret"></span>
+              </button>
+              <ul class="mui-dropdown__menu">
+                <li><a href="#" id="title" class="sortfilter">A - Z</a></li>
+                <li><a href="#" id="year" class="sortfilter">Year (Asc)</a></li>
+                <li><a href="#" id="-year" class="sortfilter">Year (Desc)</a></li>
+              </ul>
+            </div>
+            <article class="homepagewrapper">
+              <article class="filterresult">
+                <script id="filter-template" type="text/x-handlebars-template">
+                    {{#each data_resp}}
+                      <p>{{title}}</p>
+                    {{/each}}
+                </script>
+              </article>
+              <article class="recommended">
+                <script id="homepage-template" type="text/x-handlebars-template">
+                  {{#if homepageview}}
+                    <h1>Recommended for you</h1>
+                    {{#each data_resp}}
+                      <section>
+                        <div class="movie" style="background-image: url({{poster_portrait_url}}/500x300)" data-id="{{id}}"></div>
+                         <div class="details text_{{id}}">
+                            <h2>{{title}}</h2>
+                            <div class="rating">
+                              {{#times rating}}
+                                <div class="dot dot-full"></div>
+                              {{/times}}
+                            </div>
+                            <p class="year">{{year}}</p>
+                            {{#each genres}}
+                                <p class="genre">{{this}}</p>
+                              
+                            {{/each}}
+                            <p>{{description}}</p>
+                          </div>
+                        </section>
+                      {{/each}}
+                    {{/if}}
+                  </script>
+                </article>
+                <article class="hollywood">
+                  <script id="hollywood-template" type="text/x-handlebars-template">
+                    {{#if homepageview}}
+                    <h1>Because you like Hollywood</h1>
+                    {{#each data_resp}}
+                    <section>
+                      <div class="movie" style="background-image: url({{poster_portrait_url}}/500x300)" data-id="{{id}}"></div>
+                       <div class="text text_{{id}}">
+                          <h2>{{title}}</h2>
+                          <div class="rating">
+                            {{#times rating}}
+                              <div class="dot dot-full"></div>
+                            {{/times}}
+                          </div>
+                          <p class="year">{{year}}</p>
+                          {{#each genres}}
+                              <p class="genre">{{this}}</p>
+                            
+                          {{/each}}
+                          <p>{{description}}</p>
+                        </div>
+                      </section>
+                    {{/each}}
+                    {{/if}}
+                  </script>
+                </article>
+                <article class="jazwood">
+                 <script id="jazwood-template" type="text/x-handlebars-template">
+                    {{#if homepageview}}
+                    <h1>Because you like jazwood</h1>
+                    {{#each data_resp}}
+                    <section>
+                      <div class="movie" style="background-image: url({{poster_portrait_url}}/500x300)" data-id="{{id}}"></div>
+                       <div class="text text_{{id}}">
+                          <h2>{{title}}</h2>
+                          <div class="rating">
+                            {{#times rating}}
+                              <div class="dot dot-full"></div>
+                            {{/times}}
+                          </div>
+                          <p class="year">{{year}}</p>
+                          {{#each genres}}
+                              <p class="genre">{{this}}</p>
+                            
+                          {{/each}}
+                          <p>{{description}}</p>
+                        </div>
+                      </section>
+                    {{/each}}
+                    {{/if}}
+                  </script>
+                </article>
+                <article class="bollywood">
+                 <script id="bollywood-template" type="text/x-handlebars-template">
+                    {{#if homepageview}}
+                    <h1>Because you like bollywood</h1>
+                    {{#each data_resp}}
+                    <section>
+                      <div class="movie" style="background-image: url({{poster_portrait_url}}/500x300)" data-id="{{id}}"></div>
+                       <div class="text text_{{id}}">
+                          <h2>{{title}}</h2>
+                          <div class="rating">
+                            {{#times rating}}
+                              <div class="dot dot-full"></div>
+                            {{/times}}
+                          </div>
+                          <p class="year">{{year}}</p>
+                          {{#each genres}}
+                              <p class="genre">{{this}}</p>
+                            
+                          {{/each}}
+                          <p>{{description}}</p>
+                        </div>
+                      </section>
+                    {{/each}}
+                    {{/if}}
+                  </script>
+                </article>
+              </article>
+            </div>
+        </main>
+      </div> 
+    </div>
+    <footer id="footer">
+      <div class="mui-container-fluid">
+        <ul class="footer_list">
+          <li><img src="./static/devices.svg"><p>Watch on 5 devices at a time</p></li>
+          <li><img src="./static/movies.svg"><p>Unlimited HD, movies &amp; TV shows</p></li>
+          <li><img src="./static/multilanguage.svg"><p>Arabic, French, English audio &amp; subtitles</p></li>
+          <li><img src="./static/cancel.svg"><p>You can cancel anytime</p></li>
+        </ul>
+        <br>
+        <p>Made with ♥ by Riddhi Verma</p>
+      </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="static/script.js"></script>
+  </body>
+</html>
